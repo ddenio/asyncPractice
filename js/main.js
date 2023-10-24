@@ -5,6 +5,10 @@ const fetchPromise = fetch(
   console.log(fetchPromise);
   
   fetchPromise.then((response) => {
+    const jsonPromise = response.json();
+    jsonPromise.then((data) => {
+      console.log(data[0].name);
+    });
     console.log(`Received response: ${response.status}`);
   });
   
