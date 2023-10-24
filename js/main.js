@@ -1,5 +1,5 @@
 const fetchPromise = fetch(
-    "https://mdn.github.io/learning-area/javascript/apis/fetching-data/can-store/products.json",
+  "bad-scheme://mdn.github.io/learning-area/javascript/apis/fetching-data/can-store/products.json",
   );
   
   fetchPromise
@@ -12,6 +12,9 @@ const fetchPromise = fetch(
     .then((data) => {
       console.log(data[0].name);
     })
+    .catch((error) => {
+      console.error(`Could not get products: ${error}`);
+    });
   
   
   // console.log(fetchPromise);
@@ -24,4 +27,4 @@ const fetchPromise = fetch(
   //   console.log(`Received response: ${response.status}`);
   // });
   
-  console.log("Started request…");
+  // console.log("Started request…");
